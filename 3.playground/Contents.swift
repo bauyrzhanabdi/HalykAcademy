@@ -48,9 +48,19 @@ import UIKit
 
 // Task 4
 //var array : [Int] = [0, 6, 2, 0, 0, 4, 5, 3, 3, 6, 0, 7, 9, 4, 5, 0, 5, 7, 0, 0]
+//var dictionary : [Int : Int] = [:]
 //
-//for element in array.sorted(by: {$0 > $1}) {
-//    print(element)
+//var occurrence : Int
+//for item in array {
+//     occurrence = 0
+//     for element in array {
+//            if item == element {occurrence += 1} 
+//     }
+//     dictionary[item] = occurrence 
+//}
+//
+//for (key, element) in dictionary.sorted(by: {prevKey, nextKey in prevKey.value > nextKey.value}) {
+//    print("\(key): \(element)")
 //}
        
 
