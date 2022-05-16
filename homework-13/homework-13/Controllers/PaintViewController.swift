@@ -7,43 +7,37 @@
 
 import UIKit
 
-class PaintViewController: UIViewController, ToolsViewControllerDelegate {
+protocol PaintViewControllerDelegate : AnyObject {
+    func set(tool : DrawingTools)
+    func set(color : Colors)
+    func set(mode : SwitchModes)
+    func undo()
+}
+
+class PaintViewController: UIViewController {
 
     @IBOutlet var paintView: PaintView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    func changeShape(_ tool: DrawingTools) {
-        paintView.tool = tool
-        print("shape changed")
-    }
-    
-    func changeColor(_ color: Colors) {
-        paintView.color = color
-        print("color changed")
-    }
-    
-    func changeMode(_ mode: SwitchModes) {
-        paintView.mode = mode
-        print("mode changed")
-    }
-    
-    func performUndo() {
-        paintView.undo()
-        print("undo performed")
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension PaintViewController : PaintViewControllerDelegate {
+    func set(tool: DrawingTools) {
+        paintView.tool = tool
+    }
+    
+    func set(color: Colors) {
+        paintView.color = color
+    }
+    
+    func set(mode: SwitchModes) {
+        paintView.mode = mode
+    }
+    
+    func undo() {
+        paintView.undo()
+    }
+}
+

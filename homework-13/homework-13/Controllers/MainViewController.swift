@@ -125,18 +125,30 @@
 
 import UIKit
 
+enum SegueType: String {
+    case paint = "toPaint"
+    case tools = "toTools"
+}
+
 class MainViewController: UIViewController {
-    let toolsVC = ToolsViewController()
-    let paintVC = PaintViewController()
     
-    @IBOutlet weak var topContainerView: UIView!
-    @IBOutlet weak var bottomContainerView: UIView!
+    private var paintVC : PaintViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        toolsVC.delegate = paintVC
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueType = SegueType(rawValue: segue.identifier ?? "") else { return }
+        
+        switch segueType {
+        case .paint:
+            guard let controller = segue.destination as? PaintViewController else { return }
+            paintVC = controller
+        case .tools:
+            guard let controller = segue.destination as? ToolsViewController else { return }
+            controller.delegate = paintVC
+        }
+    }
 
 }

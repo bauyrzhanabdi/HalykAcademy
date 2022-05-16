@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X8g-dc-g3x">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -138,7 +138,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxZ-x0-moE">
                                 <rect key="frame" x="0.0" y="44" width="414" height="718"/>
                                 <connections>
-                                    <segue destination="zmD-0n-KmU" kind="embed" identifier="PaintViewController" id="dMk-cl-Rjd"/>
+                                    <segue destination="zmD-0n-KmU" kind="embed" identifier="toPaint" id="dMk-cl-Rjd"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfK-z6-Wok">
@@ -148,7 +148,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="wl6-Cw-Z5u"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="fwg-k1-5Oc" kind="embed" identifier="ToolsViewController" id="9pA-yB-LEq"/>
+                                    <segue destination="fwg-k1-5Oc" kind="embed" identifier="toTools" id="9pA-yB-LEq"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -165,10 +165,6 @@
                             <constraint firstItem="P1y-Vw-WM5" firstAttribute="bottom" secondItem="nfK-z6-Wok" secondAttribute="bottom" id="ldm-vk-LL3"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="bottomContainerView" destination="nfK-z6-Wok" id="Ji2-cB-MLZ"/>
-                        <outlet property="topContainerView" destination="jxZ-x0-moE" id="fjb-xu-fAd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGc-fx-pKk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,6 +177,7 @@
                     <view key="view" contentMode="scaleToFill" id="L4C-Mf-TzS" customClass="PaintView" customModule="homework_13" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="o95-kj-yPf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
@@ -283,6 +280,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vg1-WX-SQe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="XrN-76-lNn" secondAttribute="bottom" id="0jA-sf-v7M"/>

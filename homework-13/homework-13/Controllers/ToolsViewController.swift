@@ -7,51 +7,36 @@
 
 import UIKit
 
-protocol ToolsViewControllerDelegate : AnyObject {
-    func changeShape(_ tool : DrawingTools)
-    func changeColor(_ color : Colors)
-    func changeMode(_ mode : SwitchModes)
-    func performUndo()
-}
-
 class ToolsViewController: UIViewController {
     
     @IBOutlet weak var fillSwitch: UISwitch!
-    weak var delegate : ToolsViewControllerDelegate?
+    public weak var delegate : PaintViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
 
     @IBAction func shapePressed(_ sender: UIButton) {
         guard let tool = DrawingTools(rawValue: sender.tag) else {return}
-        delegate?.changeShape(tool)
-        print("shape pressed")
-        
+        delegate?.set(tool: tool)
     }
     
     @IBAction func colorPressed(_ sender: UIButton) {
         guard let color = Colors(rawValue: sender.tag) else {return}
-        delegate?.changeColor(color)
-        print("color pressed")
+        delegate?.set(color: color)
     }
     
     @IBAction func undoPressed(_ sender: UIButton) {
-        delegate?.performUndo()
-        print("undo pressed")
+        delegate?.undo()
     }
     
     @IBAction func switchTriggered(_ sender: UISwitch) {
         if fillSwitch.isOn {
-            delegate?.changeMode(.on)
+            delegate?.set(mode: .on)
         } else {
-            delegate?.changeMode(.off)
+            delegate?.set(mode: .off)
         }
-        
-        print("switch triggered")
     }
     
     
