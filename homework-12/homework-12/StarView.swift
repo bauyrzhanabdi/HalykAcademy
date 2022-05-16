@@ -28,7 +28,7 @@ class StarView: UIView {
     }
     
     override public func draw(_ rect: CGRect) {
-        let path = UIBezierPath(rect: rect)
+        let path = UIBezierPath()
         
         path.move(to: CGPoint(
             x: rect.minX,
@@ -85,8 +85,8 @@ class StarView: UIView {
             y: rect.midY
         ))
         
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = path.cgPath
+        UIColor.blue.setFill()
+        path.fill()
 
     }
 

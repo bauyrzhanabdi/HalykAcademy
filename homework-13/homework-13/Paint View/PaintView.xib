@@ -7,19 +7,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomView" customModule="homework_12" customModuleProvider="target">
-            <connections>
-                <outlet property="contentView" destination="p8N-dm-rZK" id="b01-x3-QlR"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaintView" customModule="homework_13" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="p8N-dm-rZK">
+        <view contentMode="scaleToFill" id="62x-ah-sxR">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <viewLayoutGuide key="safeArea" id="eLP-4m-qRT"/>
+            <viewLayoutGuide key="safeArea" id="Rkl-5e-WGI"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="514" y="765"/>
+            <point key="canvasLocation" x="88" y="74"/>
         </view>
     </objects>
 </document>
